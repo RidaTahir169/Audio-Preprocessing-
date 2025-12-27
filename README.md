@@ -1,10 +1,7 @@
----
-
 ```md
 # Audio Preprocessing & MFCC Feature Extraction Pipeline
 
-This repository implements a complete **audio preprocessing and MFCC feature extraction pipeline** using **Librosa**, **NumPy**, and **Matplotlib**.  
-It is suitable for speech and audio machine learning tasks.
+This repository implements a complete **audio preprocessing and MFCC feature extraction pipeline** using **Librosa**, **NumPy**, and **Matplotlib**. It is suitable for speech and audio machine learning tasks.
 
 ---
 
@@ -131,7 +128,4 @@ No external audio files are required.
 * Deep learning audio pipelines
 
 ```
-
----
-Just say the word.
 ```
