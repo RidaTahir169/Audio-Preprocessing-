@@ -1,131 +1,24 @@
-```md
-# Audio Preprocessing & MFCC Feature Extraction Pipeline
+Speech Preprocessing
+Overview
+This project demonstrates a basic speech and audio preprocessing pipeline using Librosa, NumPy, and Matplotlib.
+It loads example audio files provided by Librosa, applies common preprocessing steps, extracts Mel-Frequency Cepstral Coefficients (MFCCs), visualizes intermediate results, and performs a simple noise experiment.
 
-This repository implements a complete **audio preprocessing and MFCC feature extraction pipeline** using **Librosa**, **NumPy**, and **Matplotlib**. It is suitable for speech and audio machine learning tasks.
+The code is designed for educational purposes and as a foundation for speech recognition or audio-based machine learning workflows.
 
----
+Features
+Load built-in Librosa audio samples
+Resample audio to a fixed sampling rate (16 kHz)
+Normalize audio amplitude
+Trim silence from audio signals
+Apply smoothing using a moving average filter
+Visualize raw and processed waveforms
+Extract and visualize MFCC features
+Combine MFCCs into a single feature tensor
+Add synthetic noise for robustness testing
+Requirements
+Python Version
+Python 3.8 or higher
+Dependencies
+Install the required libraries using pip:
 
-## Features
-
-- Audio loading with original sample rate
-- Resampling to 16 kHz
-- Peak normalization
-- Silence trimming
-- Pre-emphasis filtering
-- MFCC feature extraction
-- Waveform and MFCC visualization
-- MFCC tensor creation
-- Additive noise robustness test
-
----
-
-## Project Structure
-
-```
-
-.
-├── audio_preprocessing.py
-└── README.md
-
-````
-
----
-
-## Configuration
-
-| Parameter | Value |
-|---------|-------|
-| Target sample rate | 16000 Hz |
-| MFCC coefficients | 13 |
-| Silence trim threshold | 25 dB |
-| FFT window size | 1024 |
-| Hop length | 512 |
-
----
-
-## Audio Preprocessing Pipeline
-
-1. **Resampling**  
-   Converts audio to a fixed sample rate (16 kHz)
-
-2. **Normalization**  
-   Peak normalization to scale audio between `[-1, 1]`
-
-3. **Silence Trimming**  
-   Removes leading and trailing silence
-
-4. **Pre-Emphasis**  
-   Enhances high-frequency components
-
----
-
-## MFCC Feature Extraction
-
-MFCCs are extracted using:
-
-```python
-librosa.feature.mfcc(
-    y=y,
-    sr=16000,
-    n_mfcc=13,
-    n_fft=1024,
-    hop_length=512
-)
-````
-
-Extracted MFCCs are aligned and stacked into a tensor of shape:
-
-```
-(num_samples, n_mfcc, time_frames)
-```
-
----
-
-## Output
-
-Example console output:
-
-```
-Features Tensor Shape: (2, 13, T)
-Value Range: min_value max_value
-```
-
-`T` represents the minimum number of time frames across samples.
-
----
-
-## Dependencies
-
-Install required packages:
-
-```bash
 pip install librosa numpy matplotlib
-```
-
----
-
-## How to Run
-
-```bash
-python audio_preprocessing.py
-```
-
-The script uses Librosa’s built-in example audio files:
-
-* `nutcracker`
-* `vibeace`
-
-No external audio files are required.
-
----
-
-## Use Cases
-
-* Speech recognition
-* Audio classification
-* Speaker identification
-* Noise robustness evaluation
-* Deep learning audio pipelines
-
-```
-```
